@@ -23,7 +23,7 @@ fields:
 				type: url
 			
 			line:
-    			type: line
+				type: line
 
 			
 			

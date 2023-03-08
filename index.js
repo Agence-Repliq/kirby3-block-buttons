@@ -1,1 +1,110 @@
-(function(){"use strict";const $="";function p(n,t,e,a,s,l,u,C){var o=typeof n=="function"?n.options:n;t&&(o.render=t,o.staticRenderFns=e,o._compiled=!0),a&&(o.functional=!0),l&&(o._scopeId="data-v-"+l);var i;if(u?(i=function(r){r=r||this.$vnode&&this.$vnode.ssrContext||this.parent&&this.parent.$vnode&&this.parent.$vnode.ssrContext,!r&&typeof __VUE_SSR_CONTEXT__<"u"&&(r=__VUE_SSR_CONTEXT__),s&&s.call(this,r),r&&r._registeredComponents&&r._registeredComponents.add(u)},o._ssrRegister=i):s&&(i=C?function(){s.call(this,(o.functional?this.parent:this).$root.$options.shadowRoot)}:s),i)if(o.functional){o._injectStyles=i;var m=o.render;o.render=function(O,c){return i.call(c),m(O,c)}}else{var _=o.beforeCreate;o.beforeCreate=_?[].concat(_,i):[i]}return{exports:n,options:o}}const f={computed:{buttons(){const n=[];return this.content.group.forEach((t,e)=>{!t.linktopage.length&&!t.url?n[e]={label:t.label,type:"",message:"Manque page ou url",class:t.type+" error"}:n[e]={label:t.label,linktopage:t.linktopage,url:t.url,type:t.type,message:"\xC9diter le bouton",class:t.type}}),n}}};var b=function(){var t=this,e=t._self._c;return e("div",[t.content.group.length?e("div",{staticClass:"k-block-buttons-group"},t._l(t.buttons,function(a,s){return e("button",{key:s,class:a.class,attrs:{type:"button",title:a.message},on:{click:t.open}},[e("span",[t._v(t._s(a.label))]),a.type?t._e():e("k-icon",{attrs:{type:"alert"}})],1)}),0):e("div",{staticClass:"k-block-buttons-group-empty",on:{click:t.open}},[e("button",{staticClass:"empty",attrs:{type:"button"}},[e("k-icon",{attrs:{type:"edit"}}),e("span",[t._v(t._s(t.$t("field.blocks.buttons.emptyState")))])],1)])])},d=[],v=p(f,b,d,!1,null,"1d6ea7f9",null,null);const g=v.exports,y=Object.freeze(Object.defineProperty({__proto__:null,default:g},Symbol.toStringTag,{value:"Module"})),k=n=>n.substring(n.lastIndexOf("/")+1,n.lastIndexOf(".")).toLowerCase(),h=Object.freeze({import(n){return Object.entries(n).reduce((e,[a,s])=>(e[k(a)]=s.default,e),{})}});window.panel.plugin("repliq/kirby3-block-buttons",{blocks:h.import(Object.assign({"./components/blocks/buttons.vue":y}))})})();
+(function() {
+  "use strict";
+  function normalizeComponent(scriptExports, render, staticRenderFns, functionalTemplate, injectStyles, scopeId, moduleIdentifier, shadowMode) {
+    var options = typeof scriptExports === "function" ? scriptExports.options : scriptExports;
+    if (render) {
+      options.render = render;
+      options.staticRenderFns = staticRenderFns;
+      options._compiled = true;
+    }
+    if (functionalTemplate) {
+      options.functional = true;
+    }
+    if (scopeId) {
+      options._scopeId = "data-v-" + scopeId;
+    }
+    var hook;
+    if (moduleIdentifier) {
+      hook = function(context) {
+        context = context || this.$vnode && this.$vnode.ssrContext || this.parent && this.parent.$vnode && this.parent.$vnode.ssrContext;
+        if (!context && typeof __VUE_SSR_CONTEXT__ !== "undefined") {
+          context = __VUE_SSR_CONTEXT__;
+        }
+        if (injectStyles) {
+          injectStyles.call(this, context);
+        }
+        if (context && context._registeredComponents) {
+          context._registeredComponents.add(moduleIdentifier);
+        }
+      };
+      options._ssrRegister = hook;
+    } else if (injectStyles) {
+      hook = shadowMode ? function() {
+        injectStyles.call(
+          this,
+          (options.functional ? this.parent : this).$root.$options.shadowRoot
+        );
+      } : injectStyles;
+    }
+    if (hook) {
+      if (options.functional) {
+        options._injectStyles = hook;
+        var originalRender = options.render;
+        options.render = function renderWithStyleInjection(h, context) {
+          hook.call(context);
+          return originalRender(h, context);
+        };
+      } else {
+        var existing = options.beforeCreate;
+        options.beforeCreate = existing ? [].concat(existing, hook) : [hook];
+      }
+    }
+    return {
+      exports: scriptExports,
+      options
+    };
+  }
+  const _sfc_main = {
+    computed: {
+      buttons() {
+        const buttons2 = [];
+        this.content.group.forEach((element, index2) => {
+          if (!element.linktopage.length && !element.url) {
+            buttons2[index2] = {
+              "label": element.label,
+              "type": "",
+              "message": "Manque page ou url",
+              "class": element.type + " error"
+            };
+          } else {
+            buttons2[index2] = {
+              "label": element.label,
+              "linktopage": element.linktopage,
+              "url": element.url,
+              "type": element.type,
+              "message": "\xC9diter le bouton",
+              "class": element.type
+            };
+          }
+        });
+        return buttons2;
+      }
+    }
+  };
+  var _sfc_render = function render() {
+    var _vm = this, _c = _vm._self._c;
+    return _c("div", { staticClass: "k-block-buttons" }, [_vm.content.group.length ? _c("div", { staticClass: "k-block-buttons-group" }, _vm._l(_vm.buttons, function(item, index2) {
+      return _c("button", { key: index2, class: item.class, attrs: { "type": "button", "title": item.message }, on: { "click": _vm.open } }, [_c("span", [_vm._v(_vm._s(item.label))]), !item.type ? _c("k-icon", { attrs: { "type": "alert" } }) : _vm._e()], 1);
+    }), 0) : _c("div", { staticClass: "k-block-buttons-group-empty", on: { "click": _vm.open } }, [_c("button", { staticClass: "empty", attrs: { "type": "button" } }, [_c("k-icon", { attrs: { "type": "edit" } }), _c("span", [_vm._v(_vm._s(_vm.$t("field.blocks.buttons.emptyState")))])], 1)])]);
+  };
+  var _sfc_staticRenderFns = [];
+  _sfc_render._withStripped = true;
+  var __component__ = /* @__PURE__ */ normalizeComponent(
+    _sfc_main,
+    _sfc_render,
+    _sfc_staticRenderFns,
+    false,
+    null,
+    null,
+    null,
+    null
+  );
+  __component__.options.__file = "/Users/baptiste/Documents/git/afils/composer/plugins/kirby3-block-buttons/src/components/buttons.vue";
+  const buttons = __component__.exports;
+  const index = "";
+  panel.plugin("repliq/kirby3-block-buttons", {
+    blocks: {
+      buttons
+    }
+  });
+})();

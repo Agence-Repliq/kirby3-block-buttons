@@ -1,7 +1,7 @@
-import {
-    kirbyup
-} from 'kirbyup/plugin'
-
-window.panel.plugin('repliq/kirby3-block-buttons', {
-    blocks: kirbyup.import('./components/blocks/*.vue')
-})
+import buttons from './components/buttons.vue';
+import "./index.css";
+panel.plugin("repliq/kirby3-block-buttons", {
+    blocks: {
+        buttons: buttons
+    }
+});
