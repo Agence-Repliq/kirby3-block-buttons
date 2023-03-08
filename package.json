@@ -1,0 +1,13 @@
+{
+	"name": "kirby-blocks-repliq",
+	"description": "Bundle of custom blockfor Kirby CMS block editor",
+	"version": "0.1",
+	"scripts": {
+		"dev": "kirbyup src/index.js --watch",
+		"serve": "kirbyup serve src/index.js",
+		"build": "kirbyup src/index.js"
+	},
+	"devDependencies": {
+		"kirbyup": "latest"
+	}
+}

@@ -1,0 +1,27 @@
+{
+	"name": "repliq/kirby3-block-buttons",
+	"description": "Add buttons block plugin",
+	"homepage:": "https://github.com/Agence-Repliq/kirby3-block-buttons",
+	"version": "0.1",
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "Baptiste Lhopitault",
+			"email": "baptiste@repliq.fr"
+		}
+	],
+	"keywords": [
+		"kirby3",
+		"kirby3-cms",
+		"kirby3-plugin",
+		"custom-block"
+	],
+    "require": {
+        "getkirby/composer-installer": "^1.1"
+    },
+    "config": {
+        "allow-plugins": {
+            "getkirby/composer-installer": true
+        }
+    }
+}
