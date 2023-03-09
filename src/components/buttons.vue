@@ -3,17 +3,16 @@
         <div class="k-block-buttons-group"  v-if="content.group.length">
             <button type="button" :class="item.class" v-for="(item, index) in buttons"
             :key="index"  @click="open" :title="item.message">
+                    <k-icon type="info" v-if="item.error"/>
                     <span>{{item.label}}</span>
-                    <k-icon type="alert" v-if="!item.type"/>
             </button>
         </div>
-        <div @click="open" class="k-block-buttons-group-empty"  v-else>
-            <button type="button" class="empty">
-                    <k-icon type="edit"/>
-                    <span>{{ $t('field.blocks.buttons.emptyState') }}</span>
+        <div @click="open" class="k-block-buttons-group"  v-else>
+            <button type="button" class="empty" :title="$t('field.blocks.buttons.message.edit')">
+                <k-icon type="add"/>
+                <div>#########</div>
             </button>
         </div>
-
     </div>
     
 </template>
@@ -26,18 +25,18 @@
                     if(!element.linktopage.length && !element.url ){
                         buttons[index] = {
                             "label": element.label,
-                            "type":"",
-                            "message":"Manque page ou url",
-                            "class": element.type+" error"
+                            "message": this.$t('field.blocks.buttons.message.error'),
+                            "class": "error",
+                            "error": true
                         };
                     }else {
                         buttons[index] = {
                             "label": element.label,
                             "linktopage": element.linktopage,
                             "url": element.url,
-                            "type": element.type,
-                            "message":"Éditer le bouton",
-                            "class": element.type
+                            "message": this.$t('field.blocks.buttons.message.edit'),
+                            "class": "",
+                            "error": false
                         };
                     }
 

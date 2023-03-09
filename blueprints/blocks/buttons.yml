@@ -1,38 +1,45 @@
 name: field.blocks.buttons.name
-icon: grid-full
+icon: layers
 
 fields:
 	group:
 		label: Groupe de boutons
 		type: structure
 		max: 3
-		help: Veuillez remplir Page (prioritaire) ou url. 
+		columns:
+			label:
+				width: 1/3
+			linkToPage:
+				width: 1/3
+			url:
+				width: 1/3
+
 		fields:
 			label:
-				label: titre
+				label: Label du bouton
 				type: text
 				required: true
+			
+			button_source:
+				type: select
+				label: Source
+				default: page
+				width: 1/4
+				options:
+					page: Page
+					url: Lien
 
 			linkToPage:
 				label: Page
 				type: pages
 				max: 1
-				
+				width: 3/4
+				when:
+					button_source: page
+
 			url:
 				label: url
 				type: url
-			
-			line:
-				type: line
-
-			
-			
-			type:
-				label: Apparence du bouton
-				type: select
-				default: primary
-				options:
-					primary: Principale
-					secondary: Secondaire
-					tertiary: lien classique
-			
+				width: 3/4
+				when:
+					button_source: url
