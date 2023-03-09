@@ -8,11 +8,13 @@ fields:
 		max: 3
 		columns:
 			label:
-				width: 1/3
+				width: 1/4
 			linkToPage:
-				width: 1/3
+				width: 1/4
 			url:
-				width: 1/3
+				width: 1/4
+			linkToFile:
+				width: 1/4
 
 		fields:
 			label:
@@ -28,6 +30,7 @@ fields:
 				options:
 					page: Page
 					url: Lien
+					file: Fichier
 
 			linkToPage:
 				label: Page
@@ -36,6 +39,7 @@ fields:
 				width: 3/4
 				when:
 					button_source: page
+			
 
 			url:
 				label: url
@@ -43,3 +47,12 @@ fields:
 				width: 3/4
 				when:
 					button_source: url
+
+
+			linkToFile:
+				label: Fichier
+				type: files
+				max: 1
+				width: 3/4
+				when:
+					button_source: file
