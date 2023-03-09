@@ -22,7 +22,7 @@
             buttons() {
                 const buttons = [];
                 this.content.group.forEach((element,index) => {
-                    if(!element.linktopage.length && !element.url && !element.linkToFile.length ){
+                    if(!element.linktopage.length && !element.url && !element.linktofile.length ){
                         buttons[index] = {
                             "label": element.label,
                             "message": this.$t('field.blocks.buttons.message.error'),
