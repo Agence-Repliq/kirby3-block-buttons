@@ -1,3 +1,4 @@
+![preview block buttons](https://github.com/Agence-Repliq/kirby3-block-buttons/blob/main/preview.jpg)
 
 This plugin add a new type of block in the content editor.
 
