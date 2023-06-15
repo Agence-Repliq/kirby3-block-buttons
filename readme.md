@@ -15,10 +15,12 @@ It create button link to :
 
 
 ## With composer
+`composer require repliq/kirby3-block-buttons`
 
 ## With source
-
-
+1. Download a release on https://github.com/Agence-Repliq/kirby3-block-buttons/releases
+2. Unzip
+3. Put the folder in plugins folder of your site
 
 
 ## How to dev 
