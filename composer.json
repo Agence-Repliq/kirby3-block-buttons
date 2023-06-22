@@ -1,6 +1,7 @@
 {
 	"name": "repliq/kirby3-block-buttons",
 	"description": "Add buttons block plugin",
+    "type": "kirby-plugin",
 	"homepage:": "https://github.com/Agence-Repliq/kirby3-block-buttons",
 	"license": "MIT",
 	"authors": [
@@ -20,10 +21,5 @@
 	],
     "require": {
         "getkirby/composer-installer": "^1.1"
-    },
-    "config": {
-        "allow-plugins": {
-            "getkirby/composer-installer": true
-        }
     }
 }
